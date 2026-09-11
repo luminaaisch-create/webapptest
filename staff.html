@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MeBaca — Staff Order Board</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="staff-body">
+
+  <!-- ===== LOGIN SCREEN ===== -->
+  <!-- Nothing else on this page renders until the correct PIN is entered. -->
+  <section class="staff-login-screen" id="staff-login-screen">
+    <div class="staff-login-card">
+      <p class="staff-login-brand" id="staff-login-brand">MeBaca</p>
+      <h1>Staff Login</h1>
+      <p class="muted">Enter the staff PIN to open the order board.</p>
+
+      <form id="staff-login-form" class="checkout-form">
+        <label>
+          Staff PIN
+          <input type="password" id="staff-pin-input" inputmode="numeric" autocomplete="off" maxlength="4" required />
+        </label>
+        <p class="staff-login-error hidden" id="staff-login-error">Incorrect PIN. Please try again.</p>
+        <button type="submit" class="primary-btn full-width">Log in</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== STAFF BOARD (hidden until logged in) ===== -->
+  <div id="staff-board-screen" class="hidden">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="34" height="34">
+              <path d="M6 8c5-3 11-3 14 0v24c-3-3-9-3-14 0V8Z" fill="var(--sky)"/>
+              <path d="M34 8c-5-3-11-3-14 0v24c3-3 9-3 14 0V8Z" fill="var(--ink)"/>
+            </svg>
+          </span>
+          <div>
+            <p class="brand-name" id="staff-business-name">MeBaca</p>
+            <p class="brand-tagline">Staff Order Board</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="ghost-btn" id="staff-refresh-btn" type="button">Refresh</button>
+          <button class="ghost-btn" id="staff-logout-btn" type="button">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="staff-main">
+      <p class="staff-empty-note hidden" id="staff-empty-note">No orders yet. New orders placed by customers will appear here automatically.</p>
+
+      <div class="kanban-board" id="kanban-board">
+        <!-- one column per status, injected by staff.js -->
+      </div>
+    </main>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="orders.js"></script>
+  <script src="staff.js"></script>
+</body>
+</html>

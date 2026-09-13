@@ -70,7 +70,7 @@ const PRODUCTS = [
     category: "nonfiction",
     price: 39.9,
     description: "An urban planner's field notes on what makes a street feel alive.",
-    image: "https://placehold.co/400x520/EAF4FB/1F2A38?text=How+Cities+Breathe",
+    image: "logo/Lumina Ai Logo (final)-01.png",
   },
   {
     id: "p05",
